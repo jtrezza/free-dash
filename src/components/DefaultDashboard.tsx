@@ -115,6 +115,7 @@ const DefaultDashboard = ({ socket }: Props) => {
 
   return (
     <View style={{justifyContent: 'center', marginLeft: 20}}>
+      <Text>Welcome to Free Dash XD</Text>
       <Text style={{fontSize: 60, fontWeight: '700'}}>{participants.m_header ? participants.m_participants[participants.m_header.m_playerCarIndex].m_name : ''}</Text>
       <Text style={{fontSize: 60, fontWeight: '700', paddingLeft: 40}}>{carTelemetry.m_header ? carTelemetry.m_carTelemetryData[carTelemetry.m_header.m_playerCarIndex].m_gear : 0}</Text>
       <Text style={{fontSize: 40, fontWeight: '700'}}>{carTelemetry.m_header ? carTelemetry.m_carTelemetryData[carTelemetry.m_header.m_playerCarIndex].m_speed : 0} km/h</Text>

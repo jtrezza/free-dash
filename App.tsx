@@ -1,17 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React, {type PropsWithChildren, useEffect} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import dgram from 'react-native-udp';
 import {
-  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -22,13 +12,13 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 import DefaultDashboard from './src/components/DefaultDashboard';
+import HomeScreen from './src/components/screens/HomeScreen';
+import ScreensStack from './src/components/screens/ScreensStack';
+import 'intl-pluralrules';
+import 'src/i18n/i18next';
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -38,24 +28,6 @@ const Section: React.FC<
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
     </View>
   );
 };
@@ -78,22 +50,14 @@ const App = () => {
   });
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <DefaultDashboard socket={socket} />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+        {/* <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+          hidden={true}
+        /> */}
+      <ScreensStack socket={socket} />
+    </NavigationContainer>
   );
 };
 
