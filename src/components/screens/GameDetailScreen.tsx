@@ -15,10 +15,10 @@ type Props = {
     goBack: Function,
     navigate: (route: string) => void
   }
-  route: {key: string, name: string}
+  route: {key: string, name: string, params: {game: string}}
 }
 
-const HomeScreen = (props: Props) => {
+const GameDetailScreen = (props: Props) => {
 
   const handlePress = () => {
     props.navigation.goBack();
@@ -26,7 +26,7 @@ const HomeScreen = (props: Props) => {
 
   return (
     <View style={{justifyContent: 'center', marginLeft: 20}}>
-      <Text>F1 2020!</Text>
+      <Text>{props.route.params.game}</Text>
       <Pressable onPress={handlePress} style={styles.btn}><Text style={styles.btnText}>&lt; Go Back</Text></Pressable>
     </View>
   )
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default HomeScreen;
+export default GameDetailScreen;

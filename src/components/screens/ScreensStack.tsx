@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
-import F12020Screen from './F12020Screen';
+import GameDetailScreen from './GameDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -15,8 +15,8 @@ const ScreensStack = (props: any) => {
         options={{ header: (props) => null}}
       />
       <Stack.Screen
-        name="F12020"
-        component={F12020Screen}
+        name="GameDetail"
+        component={GameDetailScreen}
         options={{ header: (props) => null}}
       />
     </Stack.Navigator>

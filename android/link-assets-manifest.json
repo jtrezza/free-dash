@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Prompt-Light.ttf",
+      "sha1": "2a673dc835eb0de60d63d00bd23b4ce52bfbb1b9"
+    },
+    {
+      "path": "src/assets/fonts/Prompt-Medium.ttf",
+      "sha1": "ed15bfac8ac1e25dfbaef4c3e7dc6178b3347379"
+    },
+    {
+      "path": "src/assets/fonts/Prompt-Regular.ttf",
+      "sha1": "04e9ee1c1fd671b495103adca8d528d200caed2e"
+    }
+  ]
+}
