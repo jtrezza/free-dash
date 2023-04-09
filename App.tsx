@@ -1,18 +1,9 @@
-import React, {type PropsWithChildren, useEffect} from 'react';
+import React, { type PropsWithChildren, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import dgram from 'react-native-udp';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import DefaultDashboard from './src/components/DefaultDashboard';
 import HomeScreen from './src/components/screens/HomeScreen';
@@ -24,12 +15,9 @@ const Section: React.FC<
   PropsWithChildren<{
     title: string;
   }>
-> = ({children, title}) => {
+> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-    </View>
-  );
+  return <View style={styles.sectionContainer}></View>;
 };
 
 const App = () => {
@@ -41,8 +29,8 @@ const App = () => {
 
   const socket = dgram.createSocket('udp4');
 
-  useEffect(()=>{
-    socket.bind(20777, function(err) {
+  useEffect(() => {
+    socket.bind(20777, function (err) {
       if (err) throw err;
       console.log('Socket bound to ' + JSON.stringify(socket.address()));
     });
@@ -51,7 +39,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-        {/* <StatusBar
+      {/* <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
           hidden={true}
